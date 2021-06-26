@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moviesAPI from '../../services/moviesAPI';
+import styles from './Reviews.module.css';
 
 class Reviews extends Component {
   state = {
@@ -17,7 +18,7 @@ class Reviews extends Component {
     const { reviews } = this.state;
 
     return (
-      <ul>
+      <ul className={styles.ReviewsList}>
         {reviews && reviews.length > 0
           ? reviews.map(({ id, author, content, url }) => (
               <li key={id}>
